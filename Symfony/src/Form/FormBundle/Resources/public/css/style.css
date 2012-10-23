@@ -1,0 +1,82 @@
+html, body {
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+body{
+    background:#d3d3d3;
+}
+
+#content{
+    width:450px;
+    margin:auto;
+}
+
+#menu {
+    text-align:center;
+    font-size:18px;
+}
+
+label{
+    width:70px;
+    float:left;
+    height:25px;
+    line-height:25px;
+    display:block;
+    clear:both;
+}
+
+form {
+    margin-top:20px;
+}
+
+input{
+    float:left;
+}
+
+
+#submit{
+    clear:both;
+    margin-left:70px;
+}
+
+a {
+    text-decoration:none;
+    color:#4169e1;
+}
+a:hover {
+    text-decoration: underline;
+    color:#c71585;
+}
+
+.current {
+    color:#8a2be2;
+    text-decoration: underline;
+}
+
+th, td {
+    padding:3px;
+    text-align:left;
+}
+
+td {
+   font-size:14px;
+}
+
+#products {
+    width:100%;
+    margin-top:20px;
+}
+
+#pages {
+    width:100%;
+    margin-top:10px;
+    font-size:18px;
+    text-align:center;
+}
+
+.clear {
+    clear:both;
+    color:#2e8b57;
+}

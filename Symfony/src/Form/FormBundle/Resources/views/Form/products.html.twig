@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Products{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{ asset('bundles/formform/css/style.css') }}" /> {% endblock %}
+
+
+{% block menu %}
+    <div id="menu">
+        <a href="../index">Add web-sites</a><span> | </span><a href="./1">Site List</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <div id="products">
+        <table border="1px solid black" >
+            <tr>
+                <th>Site Name</th>
+                <th>Site URL</th>
+                <th>Active</th>
+                <th>Created at</th>
+            </tr>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>
+                    {% if product.isActive==1 %}
+                        <a href="{{ product.url }}">{{ product.url }}</a>
+                    {% else %}
+                        {{ product.url }}
+                    {% endif %}
+                    </td>
+                    <td>
+                        {% if product.isActive==1 %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </td>
+                    <td>{{ product.createdAt|date('Y-m-d H:i:s') }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="pages">
+        {% if pages > 1 %}
+            {% if curr_page != 1 %}
+                <a href="./1">First</a>
+                <a href="./{{ curr_page-1 }}">Prev</a>
+            {% endif %}
+            {% for i in 1..pages %}
+                {% if curr_page==i %}
+                    <a class='current' href="./{{ i }}">{{ i }}</a>
+                {% else %}
+                    <a href="./{{ i }}">{{ i }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if curr_page != pages %}
+                <a href="./{{ curr_page+1 }}">Next</a>
+                <a href="./{{ pages }}">Last</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

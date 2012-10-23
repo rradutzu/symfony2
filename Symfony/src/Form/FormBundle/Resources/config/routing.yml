@@ -1,0 +1,6 @@
+FormFormBundle_homepage:
+    pattern:  /index
+    defaults: { _controller: FormFormBundle:Site:index }
+FormFormBundle_products:
+    pattern:  /products/{page}
+    defaults: { _controller: FormFormBundle:Site:products }

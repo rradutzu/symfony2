@@ -1,0 +1,8 @@
+Form\FormBundle\Entity\Site:
+  properties:
+    name:
+                - MaxLength: {limit:50, message: "Site name must be less than 50 characters!"}
+                - NotBlank: {message: "Please enter a name for the site."}
+    url:
+                - MaxLength: {limit:150, message: "Site url must be less than 150 characters."}
+                - NotBlank: {message: "Please enter a site url."}

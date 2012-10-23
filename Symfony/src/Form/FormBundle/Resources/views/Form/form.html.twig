@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Form{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{ asset('bundles/formform/css/style.css') }}" /> {% endblock %}
+
+{% block menu %}
+    <div id="menu">
+        <a href="index">Add web-sites</a><span> | </span><a href="products/1">Site List</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <form action="" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.url) }}
+        {{ form_row(form.isActive) }}
+        <input type="submit" value="Submit" id="submit" />
+    </form>
+    <div class='clear'>
+        <h4>
+            {% if formMessage==true %}
+                The form was submitted!!
+            {%- endif -%}
+        </h4>
+    </div>
+{% endblock %}
